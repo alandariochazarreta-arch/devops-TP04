@@ -12,7 +12,9 @@ Configuración completa para dev / staging / producción con:
 **Validar:**
 Ejecutar en bash
 python3 -c "import yaml; yaml.safe_load(open('config/app-config.yml'))"
-2. Diagnóstico de red (scripts/diagnostico-red.sh)
+```
+### 2. Diagnóstico de red (scripts/diagnostico-red.sh)
+```
 Script que genera un reporte completo de conectividad:
 Check	Comando usado
 Interfaces activas	ip addr show
@@ -23,8 +25,8 @@ Resolución DNS	dig +short
 Servicios HTTP	curl -o /dev/null -s -w "%{http_code}"
 Puertos locales	ss -tlnp
 ```
+### Uso:
 ```
-Uso:
 bash scripts/diagnostico-red.sh "google.com github.com 8.8.8.8"
 Los reportes se guardan en reports/red_FECHA.txt.
 Conceptos aprendidos
